@@ -5,6 +5,10 @@ const logger = require('./middlewares/loggerMiddleware')
 const app = express();
 
 app.use(logger);
+app.use((req, res, next) => {
+    console.log('Second Middleware');
+    next();
+})
 
 app.get('/', (req, res) => {
     console.log('get request on /');
