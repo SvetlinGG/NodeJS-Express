@@ -4,6 +4,8 @@ const logger = require('./middlewares/loggerMiddleware')
 
 const app = express();
 
+
+app.use(express.static('public'));
 app.use(logger);
 app.use((req, res, next) => {
     console.log('Second Middleware');
